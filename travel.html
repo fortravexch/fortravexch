@@ -13,11 +13,21 @@ body {
     text-align: center;
     background: url('fortravelbg.jpg') no-repeat center center/cover;
 }
+
+/* 전체 오버레이 */
+.overlay {
+    backdrop-filter: blur(6px);
+    background: rgba(0,0,0,0.35);
+    min-height: 100vh;
+    padding: 35px 20px;
+}
+
+/* 상단 */
 .top-bar {
     max-width: 500px;
     margin: 0 auto;
     display: flex;
-    justify-content: flex-end; /* 👉 오른쪽 정렬 */
+    justify-content: flex-end;
 }
 
 .back {
@@ -25,22 +35,50 @@ body {
     color: #fff;
     text-decoration: none;
     margin-bottom: 10px;
-}
-/* 전체 오버레이 */
-.overlay {
-    backdrop-filter: blur(6px);
-    background: rgba(0,0,0,0.3);
-    min-height: 100vh;
-    padding: 40px 20px;
+    opacity: 0.8;
 }
 
-/* 로고 */
-.logo img {
-    width: 300px;
-    margin-bottom: 25px;
+/* =========================
+   🔥 브랜드 타이틀 영역
+========================= */
+.brand-box {
+    max-width: 500px;
+    margin: 15px auto 35px;
+    text-align: center;
+    line-height: 1.3;
 }
 
-/* 제목 */
+/* 위 문장 */
+.brand-top {
+    font-size: 16px;
+    font-weight: 300;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+/* 메인 포트래블 */
+.brand-main {
+    font-size: 52px;
+    font-weight: 900;
+    letter-spacing: 2px;
+
+    /* 금색 그라데이션 */
+    background: linear-gradient(90deg, #d4af37, #fff2b3, #b8860b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    margin: 5px 0;
+}
+
+/* 아래 문장 */
+.brand-bottom {
+    font-size: 15px;
+    font-weight: 300;
+    opacity: 0.85;
+    margin-top: 10px;
+}
+
+/* 섹션 타이틀 */
 .section-title {
     font-size: 22px;
     margin: 30px 0 15px;
@@ -56,7 +94,7 @@ body {
     margin: 0 auto;
 }
 
-/* 카드 스타일 */
+/* 카드 */
 .card {
     background: rgba(255,255,255,0.08);
     padding: 12px;
@@ -100,7 +138,7 @@ body {
     line-height: 1.6;
 }
 
-/* 지도 버튼 */
+/* 지도 */
 .map-btn {
     display: inline-block;
     margin-top: 10px;
@@ -108,20 +146,48 @@ body {
     color: #aaa;
     text-decoration: underline;
 }
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .brand-main {
+        font-size: 38px;
+    }
+
+    .brand-top,
+    .brand-bottom {
+        font-size: 14px;
+    }
+}
 </style>
 
 </head>
 
 <body>
-    
-<div class="overlay">    
-<div class="top-bar">
+
+<div class="overlay">
+
+    <!-- 상단 -->
+    <div class="top-bar">
         <a href="index.html" class="back">메인으로</a>
     </div>
-        
-    <!-- 로고 -->
-    <div class="logo">
-        <img src="fort.gif" alt="포트래블 로고">
+
+    <!-- =========================
+         브랜드 타이틀 (핵심)
+    ========================= -->
+    <div class="brand-box">
+
+        <div class="brand-top">
+            감동과 깨달음이 있는 여행
+        </div>
+
+        <div class="brand-main">
+            포트래블
+        </div>
+
+        <div class="brand-bottom">
+            여행의 모든 순간, 포트래블과 함께
+        </div>
+
     </div>
 
     <!-- 업무내역 -->
@@ -160,7 +226,6 @@ body {
         📩 010-5861-3777<br>
         📍 서울시 중구 을지로42길 11<br>
 
-        <!-- 구글 지도 링크 -->
         <a href="https://maps.google.com/?q=서울시+중구+을지로42길+11" target="_blank" class="map-btn">
             👉 지도에서 보기
         </a>
