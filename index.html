@@ -15,6 +15,7 @@ body {
 
 /* 배경 */
 .hero {
+    position: relative;
     min-height: 100vh;
     background: url('airport.jpg') no-repeat center/cover;
 
@@ -26,22 +27,45 @@ body {
     padding: 20px;
 }
 
+/* 🔥 배경 어둡게 (핵심) */
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    top: 0;
+    left: 0;
+}
+
+/* 콘텐츠는 위로 올리기 */
+.content {
+    position: relative;
+    z-index: 1;
+}
+
 /* 상단 문구 */
 .subtitle {
     font-size: 18px;
     margin-bottom: 10px;
+
+    text-shadow: 0 2px 6px rgba(0,0,0,0.8);
 }
 
 .title {
-    font-size: 28px;
+    font-size: 30px;
     font-weight: bold;
     margin-bottom: 10px;
+
+    text-shadow: 0 3px 8px rgba(0,0,0,0.9);
 }
 
 .desc {
     font-size: 16px;
     margin-bottom: 40px;
-    color: #ddd;
+    color: #eee;
+
+    text-shadow: 0 2px 6px rgba(0,0,0,0.8);
 }
 
 /* 카드 영역 */
@@ -58,7 +82,7 @@ body {
     padding: 25px 15px;
     border-radius: 15px;
 
-    background: rgba(128,128,128,0.3); /* 반투명 회색 */
+    background: rgba(120,120,120,0.35);
     backdrop-filter: blur(6px);
 
     text-align: center;
@@ -70,7 +94,7 @@ body {
     margin-bottom: 10px;
 }
 
-/* 버튼 */
+/* 링크 */
 .card a {
     text-decoration: none;
     font-size: 14px;
@@ -80,7 +104,6 @@ body {
 
 /* 모바일 */
 @media (max-width: 768px) {
-
     .title {
         font-size: 24px;
     }
@@ -102,22 +125,26 @@ body {
 
 <div class="hero">
 
-    <!-- 상단 문구 -->
-    <div class="subtitle">여행의 시작 최고의 선택</div>
-    <div class="title">여행과 환전을 한 곳에서!</div>
-    <div class="desc">안전하고 편리한 여행 & 환전서비스</div>
+    <div class="content">
 
-    <!-- 카드 -->
-    <div class="card-wrap">
+        <!-- 상단 문구 -->
+        <div class="subtitle">여행의 시작 최고의 선택</div>
+        <div class="title">여행과 환전을 한 곳에서!</div>
+        <div class="desc">안전하고 편리한 여행 & 환전서비스</div>
 
-        <div class="card">
-            <div class="card-title">포트래블</div>
-            <a href="travel.html">바로가기 →</a>
-        </div>
+        <!-- 카드 -->
+        <div class="card-wrap">
 
-        <div class="card">
-            <div class="card-title">으뜸환전</div>
-            <a href="exch.html">바로가기 →</a>
+            <div class="card">
+                <div class="card-title">포트래블</div>
+                <a href="travel.html">바로가기 →</a>
+            </div>
+
+            <div class="card">
+                <div class="card-title">으뜸환전</div>
+                <a href="exchange.html">바로가기 →</a>
+            </div>
+
         </div>
 
     </div>
