@@ -13,7 +13,19 @@ body {
     text-align: center;
     background: url('fortravelbg.jpg') no-repeat center center/cover;
 }
+.top-bar {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end; /* 👉 오른쪽 정렬 */
+}
 
+.back {
+    font-size: 13px;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
 /* 전체 오버레이 */
 .overlay {
     backdrop-filter: blur(6px);
@@ -103,9 +115,10 @@ body {
 <body>
     
 <div class="overlay">    
-
-    <a href="index.html" text-align: center; class="back">← 메인으로</a>
-    
+<div class="top-bar">
+        <a href="index.html" class="back">← 메인으로</a>
+    </div>
+        
     <!-- 로고 -->
     <div class="logo">
         <img src="fort.gif" alt="포트래블 로고">
@@ -132,7 +145,7 @@ body {
         <div class="card">항공권예약</div>
         <div class="card">비자/보험</div>
         <div class="card">단체출장연수</div>
-        <div class="card highlight">중앙아시아 전문</div>
+        <div class="card highlight">중앙아시아전문</div>
     </div>
 
     <!-- 버튼 -->
