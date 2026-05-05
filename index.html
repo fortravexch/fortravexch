@@ -21,10 +21,12 @@ body {
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;   /* 🔥 중앙 → 위로 */
     align-items: center;
 
-    padding: 20px;
+    padding-top: 12vh;  /* 🔥 이 값으로 위치 조절 (10~18vh 추천) */
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 /* 🔥 배경 어둡게 (핵심) */
@@ -113,8 +115,24 @@ body {
     }
 
     .card {
-        width: 140px;
-        padding: 20px 10px;
+    width: 160px;
+    padding: 25px 15px;
+    border-radius: 15px;
+
+    background: rgba(120,120,120,0.35);
+    backdrop-filter: blur(6px);
+
+    text-align: center;
+    text-decoration: none;  /* 🔥 링크 밑줄 제거 */
+    color: #fff;
+
+    display: block; /* 🔥 전체 클릭 가능 */
+}
+
+/* 바로가기 텍스트 */
+.card-link {
+    font-size: 14px;
+    opacity: 0.9;
     }
 }
 </style>
@@ -135,15 +153,15 @@ body {
         <!-- 카드 -->
         <div class="card-wrap">
 
-            <div class="card">
-                <div class="card-title">포트래블</div>
-                <a href="travel.html">바로가기 →</a>
-            </div>
+   <a href="travel.html" class="card">
+    <div class="card-title">포트래블</div>
+    <div class="card-link">바로가기 →</div>
+</a>
 
-            <div class="card">
-                <div class="card-title">으뜸환전</div>
-                <a href="exchange.html">바로가기 →</a>
-            </div>
+<a href="exchange.html" class="card">
+    <div class="card-title">으뜸환전</div>
+    <div class="card-link">바로가기 →</div>
+</a>
 
         </div>
 
