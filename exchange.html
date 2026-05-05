@@ -14,7 +14,7 @@ body {
     background: url('exbg.jpg') no-repeat center/cover;
 }
 
-/* 오버레이 */
+/* 전체 오버레이 */
 .overlay {
     background: rgba(0,0,0,0.6);
     min-height: 100vh;
@@ -38,7 +38,7 @@ body {
     text-decoration: none;
 }
 
-/* 텍스트 */
+/* 타이틀 */
 .text-group {
     margin-top: 8vh;
     margin-bottom: 25px;
@@ -53,7 +53,6 @@ body {
     font-size: 36px;
     font-weight: bold;
     margin-bottom: 8px;
-
     background: linear-gradient(135deg, #f5d76e, #d4af37, #8b6f1e);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -112,18 +111,13 @@ body {
 }
 
 /* =========================
-   🔥 통합 환율 카드
+   🔥 환율 3x3 + RHB 구조
 ========================= */
 
 .exchange-box {
     width: 100%;
     max-width: 420px;
     margin: 30px 0;
-    padding: 22px 15px;
-
-    background: rgba(255,255,255,0.08);
-    border-radius: 18px;
-    backdrop-filter: blur(6px);
 }
 
 /* 타이틀 */
@@ -133,55 +127,46 @@ body {
     color: #eee;
 }
 
-/* 1줄: 환율 타입 */
-.rate-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.rate-item {
-    flex: 1;
-    margin: 0 5px;
-    padding: 8px 0;
-
-    font-size: 13px;
-    color: #ddd;
-
+/* 공통 네모칸 */
+.box {
+    background: rgba(255,255,255,0.08);
     border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 8px;
+    border-radius: 10px;
+
+    padding: 12px 0;
+    font-size: 13px;
+    color: #fff;
 }
 
-/* 2줄: 통화 */
-.currency-row {
-    display: flex;
-    justify-content: space-around;
-    font-size: 14px;
-    font-weight: 600;
+/* 3칸 그리드 */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
     margin-bottom: 10px;
 }
 
-/* 3줄: RHB (핵심) */
-.rhb-row {
-    margin-top: 10px;
+/* RHB 영역 (중앙 강조) */
+.rhb-wrap {
     display: flex;
     justify-content: center;
+    margin-top: 12px;
 }
 
+/* 🔥 금색 강조 */
 .rhb {
     width: 100%;
     max-width: 120px;
 
-    padding: 10px 0;
+    background: rgba(212,175,55,0.08);
+    border: 1px solid #d4af37;
     border-radius: 10px;
 
-    border: 1px solid rgba(255,255,255,0.2);
+    padding: 12px 0;
 
-    font-weight: 800;
+    font-weight: 900;
     letter-spacing: 4px;
-
-    color: #d4af37; /* 금색 */
-    background: rgba(212,175,55,0.08);
+    color: #d4af37;
 }
 
 </style>
@@ -196,7 +181,7 @@ body {
         <a href="index.html" class="back">메인으로</a>
     </div>
 
-    <!-- 텍스트 -->
+    <!-- 타이틀 -->
     <div class="text-group">
         <div class="main-text">최고의 환율</div>
         <div class="title">으뜸환전</div>
@@ -210,33 +195,34 @@ body {
         <div class="menu-item">다국통화</div>
     </div>
 
-    <!-- 🔥 환율 통합 블록 -->
+    <!-- 🔥 환율 3x3 -->
     <div class="exchange-box">
 
         <div class="rate-title">환율 안내</div>
 
         <!-- 1줄 -->
-        <div class="rate-row">
-            <div class="rate-item">우대환율</div>
-            <div class="rate-item">예약환율</div>
-            <div class="rate-item">실시간환율</div>
+        <div class="grid-3">
+            <div class="box">우대환율</div>
+            <div class="box">예약환율</div>
+            <div class="box">실시간환율</div>
         </div>
 
         <!-- 2줄 -->
-        <div class="currency-row">
-            <div>USD</div>
-            <div>JPY</div>
-            <div>CNY</div>
+        <div class="grid-3">
+            <div class="box">USD</div>
+            <div class="box">JPY</div>
+            <div class="box">CNY</div>
         </div>
 
-        <div class="currency-row">
-            <div>EUR</div>
-            <div>HKD</div>
-            <div>TWD</div>
+        <!-- 3줄 -->
+        <div class="grid-3">
+            <div class="box">EUR</div>
+            <div class="box">HKD</div>
+            <div class="box">TWD</div>
         </div>
 
-        <!-- 3줄 RHB -->
-        <div class="rhb-row">
+        <!-- 🔥 RHB (중앙 강조) -->
+        <div class="rhb-wrap">
             <div class="rhb">RHB</div>
         </div>
 
