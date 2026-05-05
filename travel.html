@@ -9,18 +9,23 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: #000;
     color: #fff;
     text-align: center;
+    
+    /* 배경 이미지 */
+    background: url('bg.jpg') no-repeat center center/cover;
 }
 
-.container {
+/* 어둡게 덮기 */
+.overlay {
+    background: rgba(0,0,0,0.65);
+    min-height: 100vh;
     padding: 40px 20px;
 }
 
 /* 로고 */
 .logo img {
-    width: 180px;
+    width: 160px;
     margin-bottom: 30px;
 }
 
@@ -31,11 +36,20 @@ body {
     font-weight: bold;
 }
 
-/* 업무 리스트 */
-.list {
-    line-height: 1.8;
-    font-size: 15px;
+/* 3열 그리드 */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    font-size: 14px;
     color: #ddd;
+}
+
+/* 항목 스타일 */
+.grid div {
+    background: rgba(255,255,255,0.08);
+    padding: 10px;
+    border-radius: 8px;
 }
 
 /* 버튼 */
@@ -57,7 +71,7 @@ body {
 .contact {
     margin-top: 40px;
     font-size: 14px;
-    color: #bbb;
+    color: #ccc;
 }
 </style>
 
@@ -65,7 +79,7 @@ body {
 
 <body>
 
-<div class="container">
+<div class="overlay">
 
     <!-- 로고 -->
     <div class="logo">
@@ -74,26 +88,27 @@ body {
 
     <!-- 업무내역 -->
     <div class="section-title">업무내역</div>
-    <div class="list">
-        해외연수<br>
-        해외컨퍼런스<br>
-        해외워크샵<br>
-        전시회참관<br>
-        수학여행<br>
-        시장조사 / 학교·기업방문<br>
-        단체패키지여행<br>
-        학술세미나<br>
-        가족여행
+    <div class="grid">
+        <div>해외연수</div>
+        <div>해외컨퍼런스</div>
+        <div>해외워크샵</div>
+        <div>전시회참관</div>
+        <div>수학여행</div>
+        <div>시장조사</div>
+        <div>학교/기업방문</div>
+        <div>단체패키지</div>
+        <div>학술세미나</div>
+        <div>가족여행</div>
     </div>
 
     <!-- 서비스 -->
     <div class="section-title">서비스</div>
-    <div class="list">
-        항공권 예약<br>
-        비자 / 여행자보험<br>
-        단체 / 기업 출장<br>
-        연수<br>
-        중앙아시아 전문
+    <div class="grid">
+        <div>항공권예약</div>
+        <div>비자/보험</div>
+        <div>단체출장</div>
+        <div>연수</div>
+        <div>중앙아시아</div>
     </div>
 
     <!-- 버튼 -->
