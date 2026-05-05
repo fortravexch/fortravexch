@@ -6,16 +6,6 @@
 <title>으뜸환전</title>
 
 <style>
-    .text-group {
-    position: absolute;
-
-    top: 20%;       /* 🔥 위에서 20% 지점 */
-    left: 50%;
-    transform: translateX(-50%);
-
-    width: 100%;
-    text-align: center;
-}
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -24,17 +14,22 @@ body {
     background: url('exbg.jpg') no-repeat center/cover;
 }
 
-/* 밝은 오버레이 */
+/* 오버레이 */
 .overlay {
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.5);
     min-height: 100vh;
-    padding: 40px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 20px;
 }
 
 /* 상단 버튼 */
 .top-bar {
+    width: 100%;
     max-width: 500px;
-    margin: 0 auto;
     display: flex;
     justify-content: flex-end;
 }
@@ -45,27 +40,30 @@ body {
     text-decoration: none;
 }
 
-/* 금색 타이틀 */
+/* 🔥 텍스트 영역 (위로 올림 핵심) */
+.text-group {
+    margin-top: 8vh;   /* 🔥 여기로 위치 조절 */
+    margin-bottom: 30px;
+}
+
+/* 텍스트 스타일 */
+.main-text {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
 .title {
     font-size: 36px;
     font-weight: bold;
-    margin: 40px 0 10px;
+    margin-bottom: 8px;
 
     background: linear-gradient(135deg, #f5d76e, #d4af37, #8b6f1e);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* 메인 문구 */
-.main-text {
-    font-size: 20px;
-    margin-top: 10px;
-}
-
-/* 서브 문구 */
 .sub-text {
     font-size: 16px;
-    margin-bottom: 30px;
     color: #eee;
 }
 
@@ -75,7 +73,7 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
     max-width: 400px;
-    margin: 0 auto 30px;
+    margin-bottom: 30px;
 }
 
 .menu-item {
@@ -102,7 +100,7 @@ body {
 
 /* 연락처 */
 .contact {
-    margin-top: 40px;
+    margin-top: auto; /* 🔥 아래로 밀기 */
     font-size: 14px;
     color: #eee;
     line-height: 1.6;
@@ -124,16 +122,17 @@ body {
 
 <div class="overlay">
 
-    <!-- 상단 버튼 -->
+    <!-- 상단 -->
     <div class="top-bar">
         <a href="index.html" class="back">메인으로</a>
     </div>
 
+    <!-- 텍스트 -->
     <div class="text-group">
-    <div class="main-text">최고의 환율</div>
-    <div class="title">으뜸환전</div>
-    <div class="sub-text">빠르고 편안한 환전</div>
-</div>
+        <div class="main-text">최고의 환율</div>
+        <div class="title">으뜸환전</div>
+        <div class="sub-text">빠르고 편안한 환전</div>
+    </div>
 
     <!-- 메뉴 -->
     <div class="menu-grid">
