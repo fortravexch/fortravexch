@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>포트래블 & 으뜸환전</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      padding: 80px 20px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #cbd5e1;
+      margin-bottom: 50px;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: white;
+      color: black;
+      width: 240px;
+      padding: 25px;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h2 {
+      margin: 10px 0;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .icon {
+      font-size: 40px;
+    }
+
+    .btn {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 8px;
+      color: white;
+      display: inline-block;
+    }
+
+    .travel-btn {
+      background: #2563eb;
+    }
+
+    .exchange-btn {
+      background: #16a34a;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>✈️ 여행과 환전을 한 곳에서</h1>
+    <p>포트래블 & 으뜸환전 서비스</p>
+
+    <div class="card-container">
+
+      <!-- 포트래블 -->
+      <div class="card" onclick="location.href='travel.html'">
+        <div class="icon">✈️</div>
+        <h2>포트래블</h2>
+        <p>해외여행, 항공권, 호텔 안내</p>
+        <div class="btn travel-btn">바로가기</div>
+      </div>
+
+      <!-- 으뜸환전 -->
+      <div class="card" onclick="location.href='exchange.html'">
+        <div class="icon">💱</div>
+        <h2>으뜸환전</h2>
+        <p>실시간 환율 확인 및 환전 서비스</p>
+        <div class="btn exchange-btn">바로가기</div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
