@@ -2,10 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-
-<!-- 🔥 이거 없으면 모바일에서 무조건 작게 보임 -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>포트래블</title>
 
 <style>
@@ -14,12 +11,11 @@ body {
     font-family: Arial, sans-serif;
     color: #fff;
     text-align: center;
-    background: #000;
 }
 
 /* 배경 */
 .hero {
-    min-height: 100vh;
+    height: 100vh;
     background: url('airport.jpg') no-repeat center/cover;
 
     display: flex;
@@ -30,50 +26,43 @@ body {
     padding: 20px;
 }
 
-/* 어둡게 덮기 */
-.overlay {
-    background: rgba(0,0,0,0.4);
-    padding: 30px 20px;
-    border-radius: 20px;
-    width: 100%;
-    max-width: 420px;
-}
-
-/* 로고 */
-.logo img {
-    width: 70%;
-    max-width: 260px;
-    margin-bottom: 20px;
-}
-
 /* 메인 문구 */
 h1 {
-    font-size: 26px;
-    margin-bottom: 30px;
-}
-
-/* 버튼 영역 */
-.btn-group {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    font-size: 32px;
+    margin-bottom: 40px;
 }
 
 /* 버튼 */
 .btn {
-    display: block;
-    padding: 16px;
+    display: inline-block;
+    padding: 18px 30px;
     border-radius: 30px;
     text-decoration: none;
     color: #fff;
-    font-size: 16px;
+    font-size: 18px;
+    margin: 10px;
 
-    background: linear-gradient(135deg, #1e90ff, #0066ff);
+    background: #1e90ff;
 }
 
+/* 환전 버튼 */
 .btn.secondary {
-    background: linear-gradient(135deg, #f5d76e, #d4af37);
+    background: #d4af37;
     color: #000;
+}
+
+/* 모바일 최적화 */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 26px;
+    }
+
+    .btn {
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+        font-size: 16px;
+    }
 }
 </style>
 
@@ -83,23 +72,10 @@ h1 {
 
 <div class="hero">
 
-    <div class="overlay">
+    <h1>당신의 여행을 설계합니다</h1>
 
-        <!-- 로고 -->
-        <div class="logo">
-            <img src="fort.gif" alt="포트래블">
-        </div>
-
-        <!-- 문구 -->
-        <h1>당신의 여행을 설계합니다</h1>
-
-        <!-- 버튼 -->
-        <div class="btn-group">
-            <a href="travel.html" class="btn">✈️ 여행 안내</a>
-            <a href="exch.html" class="btn secondary">💱 환전 안내</a>
-        </div>
-
-    </div>
+    <a href="travel.html" class="btn">✈️ 여행 안내</a>
+    <a href="excange.html" class="btn secondary">💱 환전 안내</a>
 
 </div>
 
