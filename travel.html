@@ -158,6 +158,21 @@ body {
         font-size: 14px;
     }
 }
+    /* 중앙 단독 강조 박스 */
+.highlight-center {
+    max-width: 500px;
+    margin: 15px auto 0;
+    padding: 12px 18px;
+    border-radius: 14px;
+
+    background: linear-gradient(135deg, #d4af37, #8b6f1e);
+    color: #000;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+
+    letter-spacing: 0.5px;
+}
 </style>
 
 </head>
@@ -206,13 +221,18 @@ body {
     </div>
 
     <!-- 서비스 -->
-    <div class="section-title">서비스</div>
-    <div class="grid">
-        <div class="card">항공권예약</div>
-        <div class="card">비자/보험</div>
-        <div class="card">단체출장연수</div>
-        <div class="card highlight">중앙아시아전문</div>
-    </div>
+<div class="section-title">서비스</div>
+
+<div class="grid">
+    <div class="card">항공권예약</div>
+    <div class="card">비자/보험</div>
+    <div class="card">단체출장연수</div>
+</div>
+
+<!-- 🔥 중앙 강조 박스 (grid 밖으로 분리) -->
+<div class="highlight-center">
+    중앙아시아전문
+</div>
 
     <!-- 버튼 -->
     <div class="btn-area">
