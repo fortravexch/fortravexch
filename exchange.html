@@ -14,14 +14,14 @@ body {
     background: url('exchbg.jpg') no-repeat center/cover;
 }
 
-/* 오버레이 */
+/* 밝은 오버레이 */
 .overlay {
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.25);
     min-height: 100vh;
     padding: 40px 20px;
 }
 
-/* 상단 바 */
+/* 상단 버튼 */
 .top-bar {
     max-width: 500px;
     margin: 0 auto;
@@ -33,31 +33,33 @@ body {
     font-size: 13px;
     color: #fff;
     text-decoration: none;
-    margin-bottom: 10px;
 }
 
-/* 로고 */
-.logo img {
-    width: 60%;
-    max-width: 280px;
-    margin-bottom: 30px;
+/* 금색 타이틀 */
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 40px 0 10px;
+
+    background: linear-gradient(135deg, #f5d76e, #d4af37, #8b6f1e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* 메인 문구 */
 .main-text {
     font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 15px;
+    margin-top: 10px;
 }
 
 /* 서브 문구 */
 .sub-text {
     font-size: 16px;
     margin-bottom: 30px;
-    color: #ddd;
+    color: #eee;
 }
 
-/* 작은 메뉴 */
+/* 메뉴 */
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -67,7 +69,7 @@ body {
 }
 
 .menu-item {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.15);
     padding: 12px;
     border-radius: 10px;
     font-size: 14px;
@@ -81,18 +83,18 @@ body {
     border-radius: 25px;
     text-decoration: none;
     color: #fff;
-    background: #1e90ff;
+    background: linear-gradient(135deg, #1e90ff, #0066ff);
 }
 
 .btn.secondary {
-    background: #555;
+    background: linear-gradient(135deg, #777, #444);
 }
 
 /* 연락처 */
 .contact {
     margin-top: 40px;
     font-size: 14px;
-    color: #ccc;
+    color: #eee;
     line-height: 1.6;
 }
 
@@ -101,7 +103,7 @@ body {
     display: inline-block;
     margin-top: 10px;
     font-size: 13px;
-    color: #aaa;
+    color: #ddd;
     text-decoration: underline;
 }
 </style>
@@ -112,21 +114,19 @@ body {
 
 <div class="overlay">
 
-    <!-- 우측 상단 버튼 -->
+    <!-- 상단 버튼 -->
     <div class="top-bar">
-        <a href="index.html" class="back">메인으로</a>
+        <a href="index.html" class="back">← 메인으로</a>
     </div>
 
-    <!-- 로고 -->
-    <div class="logo">
-        <img src="exchange.gif" alt="으뜸환전 로고">
-    </div>
+    <!-- 타이틀 -->
+    <div class="title">으뜸환전</div>
 
-    <!-- 메인 문구 -->
+    <!-- 문구 -->
     <div class="main-text">최고의 환율</div>
     <div class="sub-text">빠르고 안전한 환전</div>
 
-    <!-- 작은 메뉴 -->
+    <!-- 메뉴 -->
     <div class="menu-grid">
         <div class="menu-item">우대환율</div>
         <div class="menu-item">당일환율</div>
