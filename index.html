@@ -15,7 +15,7 @@ body {
 
 /* 배경 */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     background: url('airport.jpg') no-repeat center/cover;
 
     display: flex;
@@ -26,42 +26,72 @@ body {
     padding: 20px;
 }
 
-/* 메인 문구 */
-h1 {
-    font-size: 32px;
+/* 상단 문구 */
+.subtitle {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.desc {
+    font-size: 16px;
     margin-bottom: 40px;
+    color: #ddd;
+}
+
+/* 카드 영역 */
+.card-wrap {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* 카드 */
+.card {
+    width: 160px;
+    padding: 25px 15px;
+    border-radius: 15px;
+
+    background: rgba(128,128,128,0.3); /* 반투명 회색 */
+    backdrop-filter: blur(6px);
+
+    text-align: center;
+}
+
+/* 카드 타이틀 */
+.card-title {
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 /* 버튼 */
-.btn {
-    display: inline-block;
-    padding: 18px 30px;
-    border-radius: 30px;
+.card a {
     text-decoration: none;
+    font-size: 14px;
     color: #fff;
-    font-size: 18px;
-    margin: 10px;
-
-    background: #1e90ff;
+    opacity: 0.9;
 }
 
-/* 환전 버튼 */
-.btn.secondary {
-    background: #d4af37;
-    color: #000;
-}
-
-/* 모바일 최적화 */
+/* 모바일 */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 26px;
+
+    .title {
+        font-size: 24px;
     }
 
-    .btn {
-        display: block;
-        width: 80%;
-        margin: 10px auto;
-        font-size: 16px;
+    .desc {
+        font-size: 14px;
+    }
+
+    .card {
+        width: 140px;
+        padding: 20px 10px;
     }
 }
 </style>
@@ -72,10 +102,25 @@ h1 {
 
 <div class="hero">
 
-    <h1>당신의 여행을 설계합니다</h1>
+    <!-- 상단 문구 -->
+    <div class="subtitle">여행의 시작 최고의 선택</div>
+    <div class="title">여행과 환전을 한 곳에서!</div>
+    <div class="desc">안전하고 편리한 여행 & 환전서비스</div>
 
-    <a href="travel.html" class="btn">✈️ 여행 안내</a>
-    <a href="excange.html" class="btn secondary">💱 환전 안내</a>
+    <!-- 카드 -->
+    <div class="card-wrap">
+
+        <div class="card">
+            <div class="card-title">포트래블</div>
+            <a href="travel.html">바로가기 →</a>
+        </div>
+
+        <div class="card">
+            <div class="card-title">으뜸환전</div>
+            <a href="exch.html">바로가기 →</a>
+        </div>
+
+    </div>
 
 </div>
 
