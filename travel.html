@@ -2,54 +2,81 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>포트래블</title>
+  <title>여행 서비스</title>
 
   <style>
     body {
-      font-family: Arial;
+      margin: 0;
+      font-family: Arial, sans-serif;
       text-align: center;
-      padding: 40px;
-      background: #f8fafc;
+      background-color: #f5f5f5;
     }
 
-    .card {
-      background: white;
-      padding: 20px;
-      margin: 20px;
+    .hero {
+      height: 100vh;
+      background-image: url('travel.jpg'); /* 배경이미지 */
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .overlay {
+      background: rgba(0,0,0,0.5);
+      padding: 40px;
+      color: white;
       border-radius: 10px;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     }
 
     .btn {
       margin-top: 20px;
-      padding: 12px;
-      background: #2563eb;
+      padding: 15px 25px;
+      font-size: 18px;
+      background-color: #00aaff;
       color: white;
-      border-radius: 8px;
-      display: inline-block;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .section {
+      padding: 50px 20px;
+      background: white;
+    }
+
+    iframe {
+      width: 90%;
+      height: 300px;
+      border: none;
     }
   </style>
 </head>
 
 <body>
 
-<h1>✈️ 포트래블</h1>
-<p>여행 상담 및 예약</p>
+  <!-- 메인 화면 -->
+  <div class="hero">
+    <div class="overlay">
+      <h1>여행 상담</h1>
+      <p>전세계 여행 상품 안내</p>
+      <a href="#contact" class="btn">상담 문의</a>
+    </div>
+  </div>
 
-<div class="card">
-  <h2>일본 도쿄</h2>
-  <p>3박 4일 자유여행</p>
-</div>
+  <!-- 연락 -->
+  <div id="contact" class="section">
+    <h2>전화 상담</h2>
+    <p>📞 02-2278-0034</p>
+  </div>
 
-<div class="card">
-  <h2>태국 방콕</h2>
-  <p>5일 패키지 여행</p>
-</div>
-
-<a href="tel:01012345678" class="btn">📞 전화 문의</a>
-
-<br><br>
-<a href="index.html">← 메인으로</a>
+  <!-- 지도 -->
+  <div class="section">
+    <h2>오시는 길</h2>
+    <iframe 
+      src="https://maps.google.com/maps?q=서울&t=&z=13&ie=UTF8&iwloc=&output=embed">
+    </iframe>
+  </div>
 
 </body>
 </html>
