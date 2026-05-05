@@ -8,70 +8,93 @@
 <style>
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Pretendard', Arial, sans-serif;
     color: #fff;
     text-align: center;
-    
-    /* 배경 이미지 */
     background: url('fortravelbg.jpg') no-repeat center center/cover;
 }
 
-/* 어둡게 덮기 */
+/* 전체 오버레이 */
 .overlay {
-    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(6px);
+    background: rgba(0,0,0,0.6);
     min-height: 100vh;
     padding: 40px 20px;
 }
 
 /* 로고 */
 .logo img {
-    width: 160px;
-    margin-bottom: 30px;
+    width: 170px;
+    margin-bottom: 25px;
 }
 
 /* 제목 */
 .section-title {
-    font-size: 20px;
+    font-size: 22px;
     margin: 30px 0 15px;
-    font-weight: bold;
+    font-weight: 600;
 }
 
-/* 3열 그리드 */
+/* 카드 그리드 */
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    font-size: 14px;
-    color: #ddd;
+    gap: 12px;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
-/* 항목 스타일 */
-.grid div {
+/* 카드 스타일 */
+.card {
     background: rgba(255,255,255,0.08);
-    padding: 10px;
-    border-radius: 8px;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    backdrop-filter: blur(4px);
+}
+
+/* 강조 카드 */
+.highlight {
+    background: linear-gradient(135deg, #d4af37, #8b6f1e);
+    color: #000;
+    font-weight: bold;
 }
 
 /* 버튼 */
+.btn-area {
+    margin-top: 35px;
+}
+
 .btn {
     display: inline-block;
-    margin: 10px;
-    padding: 12px 20px;
-    border-radius: 8px;
+    margin: 8px;
+    padding: 13px 22px;
+    border-radius: 30px;
     text-decoration: none;
     color: #fff;
-    background: #1e90ff;
+    background: linear-gradient(135deg, #1e90ff, #0066ff);
+    font-size: 14px;
 }
 
 .btn.secondary {
-    background: #555;
+    background: linear-gradient(135deg, #777, #444);
 }
 
 /* 연락처 */
 .contact {
     margin-top: 40px;
     font-size: 14px;
-    color: #ccc;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+/* 지도 버튼 */
+.map-btn {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 13px;
+    color: #aaa;
+    text-decoration: underline;
 }
 </style>
 
@@ -89,38 +112,43 @@ body {
     <!-- 업무내역 -->
     <div class="section-title">업무내역</div>
     <div class="grid">
-        <div>해외연수</div>
-        <div>해외컨퍼런스</div>
-        <div>해외워크샵</div>
-        <div>전시회참관</div>
-        <div>수학여행</div>
-        <div>시장조사</div>
-        <div>학교/기업방문</div>
-        <div>단체패키지</div>
-        <div>학술세미나</div>
-        <div>가족여행</div>
+        <div class="card">해외연수</div>
+        <div class="card">해외컨퍼런스</div>
+        <div class="card">해외워크샵</div>
+        <div class="card">전시회참관</div>
+        <div class="card">수학여행</div>
+        <div class="card">시장조사</div>
+        <div class="card">학교/기업방문</div>
+        <div class="card">단체패키지</div>
+        <div class="card">학술세미나</div>
+        <div class="card">가족여행</div>
     </div>
 
     <!-- 서비스 -->
     <div class="section-title">서비스</div>
     <div class="grid">
-        <div>항공권예약</div>
-        <div>비자/보험</div>
-        <div>단체출장연수</div>
-        <div>중앙아시아전문</div>
+        <div class="card">항공권예약</div>
+        <div class="card">비자/보험</div>
+        <div class="card">단체출장연수</div>
+        <div class="card highlight">중앙아시아 전문</div>
     </div>
 
     <!-- 버튼 -->
-    <div style="margin-top:30px;">
-        <a href="tel:0222780034" class="btn">전화 상담</a>
-        <a href="sms:01058613777" class="btn secondary">문자 상담</a>
+    <div class="btn-area">
+        <a href="tel:0222780034" class="btn">📞 전화 상담</a>
+        <a href="sms:01058613777" class="btn secondary">📩 문자 상담</a>
     </div>
 
     <!-- 연락처 -->
     <div class="contact">
         📞 02-2278-0034<br>
         📩 010-5861-3777<br>
-        📍 서울시 중구 을지로42길 11
+        📍 서울시 중구 을지로42길 11<br>
+
+        <!-- 구글 지도 링크 -->
+        <a href="https://maps.google.com/?q=서울시+중구+을지로42길+11" target="_blank" class="map-btn">
+            👉 지도에서 보기
+        </a>
     </div>
 
 </div>
