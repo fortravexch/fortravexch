@@ -11,9 +11,9 @@
       color: white;
       text-align: center;
 
-      /* 안정적인 배경 (이미지 + 그라데이션 같이 사용) */
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                  url('https://picsum.photos/1200/800') no-repeat center center/cover;
+      /* ✈️ 공항 느낌 배경 */
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+      url('https://images.unsplash.com/photo-1504198453319-5ce911bafcde') no-repeat center center/cover;
     }
 
     .container {
@@ -22,11 +22,11 @@
     }
 
     h1 {
-      font-size: 32px;
+      font-size: 34px;
       margin-bottom: 10px;
     }
 
-    p {
+    p.subtitle {
       color: #ddd;
       margin-bottom: 40px;
     }
@@ -34,34 +34,46 @@
     .card-container {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 15px;
       flex-wrap: wrap;
     }
 
     .card {
-      background: rgba(255,255,255,0.95);
-      color: black;
-      width: 260px;
-      padding: 25px;
-      border-radius: 15px;
+      background: rgba(255,255,255,0.92);
+      color: #111;
+      width: 200px; /* 🔥 크기 줄임 */
+      padding: 20px;
+      border-radius: 12px;
       cursor: pointer;
-      transition: 0.3s;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      transition: 0.25s;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.25);
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-4px);
     }
 
     .icon {
-      font-size: 40px;
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .card h2 {
+      margin: 8px 0;
+      font-size: 20px;
+    }
+
+    .desc {
+      font-size: 14px;
+      color: #333; /* 🔥 가독성 개선 */
     }
 
     .btn {
-      margin-top: 15px;
-      padding: 10px;
-      border-radius: 8px;
+      margin-top: 12px;
+      padding: 8px;
+      border-radius: 6px;
       color: white;
+      font-size: 13px;
       display: inline-block;
     }
 
@@ -73,14 +85,14 @@
       background: #16a34a;
     }
 
-    /* 📱 모바일 최적화 */
+    /* 📱 모바일 */
     @media (max-width: 600px) {
       h1 {
         font-size: 24px;
       }
 
       .card {
-        width: 90%;
+        width: 85%;
       }
     }
   </style>
@@ -91,7 +103,7 @@
 <div class="container">
 
   <h1>✈️ 여행과 환전을 한 번에</h1>
-  <p>포트래블 & 으뜸환전 서비스</p>
+  <p class="subtitle">포트래블 & 으뜸환전 서비스</p>
 
   <div class="card-container">
 
@@ -99,7 +111,7 @@
     <div class="card" onclick="location.href='travel.html'">
       <div class="icon">✈️</div>
       <h2>포트래블</h2>
-      <p>여행 상담 및 예약</p>
+      <div class="desc">여행 상담 및 예약</div>
       <div class="btn travel-btn">바로가기</div>
     </div>
 
@@ -107,7 +119,7 @@
     <div class="card" onclick="location.href='exchange.html'">
       <div class="icon">💱</div>
       <h2>으뜸환전</h2>
-      <p>실시간 환율 & 환전 서비스</p>
+      <div class="desc">실시간 환율 & 환전 서비스</div>
       <div class="btn exchange-btn">바로가기</div>
     </div>
 
