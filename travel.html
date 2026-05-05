@@ -1,82 +1,115 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>여행 서비스</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>포트래블 여행</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background-color: #f5f5f5;
-    }
+<style>
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #000;
+    color: #fff;
+    text-align: center;
+}
 
-    .hero {
-      height: 100vh;
-      background-image: url('travel.jpg'); /* 배경이미지 */
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+.container {
+    padding: 40px 20px;
+}
 
-    .overlay {
-      background: rgba(0,0,0,0.5);
-      padding: 40px;
-      color: white;
-      border-radius: 10px;
-    }
+/* 로고 */
+.logo img {
+    width: 180px;
+    margin-bottom: 30px;
+}
 
-    .btn {
-      margin-top: 20px;
-      padding: 15px 25px;
-      font-size: 18px;
-      background-color: #00aaff;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
+/* 제목 */
+.section-title {
+    font-size: 20px;
+    margin: 30px 0 15px;
+    font-weight: bold;
+}
 
-    .section {
-      padding: 50px 20px;
-      background: white;
-    }
+/* 업무 리스트 */
+.list {
+    line-height: 1.8;
+    font-size: 15px;
+    color: #ddd;
+}
 
-    iframe {
-      width: 90%;
-      height: 300px;
-      border: none;
-    }
-  </style>
+/* 버튼 */
+.btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+    background: #1e90ff;
+}
+
+.btn.secondary {
+    background: #555;
+}
+
+/* 연락처 */
+.contact {
+    margin-top: 40px;
+    font-size: 14px;
+    color: #bbb;
+}
+</style>
+
 </head>
 
 <body>
 
-  <!-- 메인 화면 -->
-  <div class="hero">
-    <div class="overlay">
-      <h1>여행 상담</h1>
-      <p>전세계 여행 상품 안내</p>
-      <a href="#contact" class="btn">상담 문의</a>
+<div class="container">
+
+    <!-- 로고 -->
+    <div class="logo">
+        <img src="fort.gif" alt="포트래블 로고">
     </div>
-  </div>
 
-  <!-- 연락 -->
-  <div id="contact" class="section">
-    <h2>전화 상담</h2>
-    <p>📞 02-2278-0034</p>
-  </div>
+    <!-- 업무내역 -->
+    <div class="section-title">업무내역</div>
+    <div class="list">
+        해외연수<br>
+        해외컨퍼런스<br>
+        해외워크샵<br>
+        전시회참관<br>
+        수학여행<br>
+        시장조사 / 학교·기업방문<br>
+        단체패키지여행<br>
+        학술세미나<br>
+        가족여행
+    </div>
 
-  <!-- 지도 -->
-  <div class="section">
-    <h2>오시는 길</h2>
-    <iframe 
-      src="https://maps.google.com/maps?q=서울시 중구 을지로42길 11&t=&z=13&ie=UTF8&iwloc=&output=embed">
-    </iframe>
-  </div>
+    <!-- 서비스 -->
+    <div class="section-title">서비스</div>
+    <div class="list">
+        항공권 예약<br>
+        비자 / 여행자보험<br>
+        단체 / 기업 출장<br>
+        연수<br>
+        중앙아시아 전문
+    </div>
+
+    <!-- 버튼 -->
+    <div style="margin-top:30px;">
+        <a href="tel:0222780034" class="btn">전화 상담</a>
+        <a href="sms:01058613777" class="btn secondary">문자 상담</a>
+    </div>
+
+    <!-- 연락처 -->
+    <div class="contact">
+        📞 02-2278-0034<br>
+        📩 010-5861-3777<br>
+        📍 서울시 중구 을지로42길 11
+    </div>
+
+</div>
 
 </body>
 </html>
