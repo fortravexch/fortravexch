@@ -1,55 +1,156 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>으뜸환전</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>으뜸환전</title>
 
-  <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      padding: 40px;
-      background: #f0fdf4;
-    }
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    text-align: center;
+    background: url('exchbg.jpg') no-repeat center/cover;
+}
 
-    .rate-box {
-      background: white;
-      padding: 20px;
-      margin: 20px auto;
-      width: 250px;
-      border-radius: 10px;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    }
+/* 오버레이 */
+.overlay {
+    background: rgba(0,0,0,0.5);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
 
-    .btn {
-      padding: 12px;
-      background: #16a34a;
-      color: white;
-      border-radius: 8px;
-      display: inline-block;
-      margin-top: 20px;
-    }
-  </style>
+/* 상단 바 */
+.top-bar {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.back {
+    font-size: 13px;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+/* 로고 */
+.logo img {
+    width: 60%;
+    max-width: 280px;
+    margin-bottom: 30px;
+}
+
+/* 메인 문구 */
+.main-text {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* 서브 문구 */
+.sub-text {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #ddd;
+}
+
+/* 작은 메뉴 */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 400px;
+    margin: 0 auto 30px;
+}
+
+.menu-item {
+    background: rgba(255,255,255,0.1);
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+/* 버튼 */
+.btn {
+    display: inline-block;
+    margin: 8px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #fff;
+    background: #1e90ff;
+}
+
+.btn.secondary {
+    background: #555;
+}
+
+/* 연락처 */
+.contact {
+    margin-top: 40px;
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* 지도 */
+.map-btn {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 13px;
+    color: #aaa;
+    text-decoration: underline;
+}
+</style>
+
 </head>
 
 <body>
 
-<h1>💱 으뜸환전</h1>
+<div class="overlay">
 
-<div class="rate-box">
-  <h2>USD</h2>
-  <p>₩ 1,380</p>
+    <!-- 우측 상단 버튼 -->
+    <div class="top-bar">
+        <a href="index.html" class="back">메인으로</a>
+    </div>
+
+    <!-- 로고 -->
+    <div class="logo">
+        <img src="exchange.gif" alt="으뜸환전 로고">
+    </div>
+
+    <!-- 메인 문구 -->
+    <div class="main-text">최고의 환율</div>
+    <div class="sub-text">빠르고 안전한 환전</div>
+
+    <!-- 작은 메뉴 -->
+    <div class="menu-grid">
+        <div class="menu-item">우대환율</div>
+        <div class="menu-item">당일환율</div>
+        <div class="menu-item">다국통화</div>
+    </div>
+
+    <!-- 버튼 -->
+    <div>
+        <a href="tel:0222780033" class="btn">📞 전화 상담</a>
+        <a href="sms:01058613777" class="btn secondary">📩 문자 상담</a>
+    </div>
+
+    <!-- 연락처 -->
+    <div class="contact">
+        📞 02-2278-0033<br>
+        📩 010-5861-3777<br>
+        📍 서울시 중구 을지로42길 11<br>
+
+        <a href="https://maps.google.com/?q=서울시+중구+을지로42길+11" target="_blank" class="map-btn">
+            👉 지도에서 보기
+        </a>
+    </div>
+
 </div>
-
-<div class="rate-box">
-  <h2>JPY</h2>
-  <p>₩ 9.2</p>
-</div>
-
-<a href="tel:01012345678" class="btn">📞 환전 문의</a>
-
-<br><br>
-<a href="index.html">← 메인으로</a>
 
 </body>
 </html>
