@@ -6,6 +6,7 @@
 <title>포트래블</title>
 
 <style>
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -13,44 +14,43 @@ body {
     text-align: center;
 }
 
-/* 배경 */
+/* 전체 배경 */
 .hero {
     position: relative;
     min-height: 100vh;
-    background: url('air.jpg') no-repeat center/cover;
+
+    background: url('air.jpg') no-repeat center center/cover;
 
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;   /* 🔥 중앙 → 위로 */
+    justify-content: flex-start;
     align-items: center;
 
-    padding-top: 12vh;  /* 🔥 이 값으로 위치 조절 (10~18vh 추천) */
+    padding-top: 12vh;
     padding-left: 20px;
     padding-right: 20px;
+
+    overflow: hidden;
 }
 
-/* 🔥 배경 어둡게 (핵심) */
+/* 배경 어둡게 */
 .hero::before {
     content: "";
     position: absolute;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: rgba(0,0,0,0.45);
-    top: 0;
-    left: 0;
 }
 
-/* 콘텐츠는 위로 올리기 */
+/* 콘텐츠 */
 .content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 /* 상단 문구 */
 .subtitle {
     font-size: 18px;
     margin-bottom: 10px;
-
     text-shadow: 0 2px 6px rgba(0,0,0,0.8);
 }
 
@@ -58,15 +58,13 @@ body {
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 10px;
-
     text-shadow: 0 3px 8px rgba(0,0,0,0.9);
 }
 
 .desc {
     font-size: 16px;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
     color: #eee;
-
     text-shadow: 0 2px 6px rgba(0,0,0,0.8);
 }
 
@@ -82,65 +80,126 @@ body {
 .card {
     width: 160px;
     padding: 25px 15px;
-    border-radius: 15px;
+    border-radius: 18px;
 
     background: rgba(120,120,120,0.35);
     backdrop-filter: blur(6px);
 
     text-align: center;
-}
-
-/* 카드 타이틀 */
-.card-title {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-/* 링크 */
-.card a {
     text-decoration: none;
-    font-size: 14px;
     color: #fff;
+
+    display: block;
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+
+    transition: 0.25s;
+}
+
+/* 카드 호버 */
+.card:hover {
+    transform: translateY(-4px);
+    background: rgba(140,140,140,0.42);
+}
+
+/* 카드 제목 */
+.card-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* 카드 링크 */
+.card-link {
+    font-size: 14px;
     opacity: 0.9;
+}
+
+/* 하단 버튼 */
+.bottom-menu {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* 하단 버튼 스타일 */
+.bottom-btn {
+    width: 95px;
+    padding: 12px 10px;
+
+    border-radius: 14px;
+
+    background: rgba(120,120,120,0.35);
+    backdrop-filter: blur(6px);
+
+    color: #fff;
+    text-decoration: none;
+
+    font-size: 14px;
+    text-align: center;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+
+    transition: 0.25s;
+}
+
+/* 버튼 호버 */
+.bottom-btn:hover {
+    background: rgba(140,140,140,0.42);
+    transform: translateY(-2px);
+}
+
+/* 링크 공통 */
+a, a:link, a:visited, a:hover, a:active {
+    color: #fff;
+    text-decoration: none;
 }
 
 /* 모바일 */
 @media (max-width: 768px) {
+
+    .hero {
+        padding-top: 11vh;
+    }
+
     .title {
         font-size: 24px;
     }
 
     .desc {
         font-size: 14px;
+        margin-bottom: 35px;
     }
 
     .card {
-    width: 160px;
-    padding: 25px 15px;
-    border-radius: 15px;
+        width: 150px;
+        padding: 22px 12px;
+    }
 
-    background: rgba(120,120,120,0.35);
-    backdrop-filter: blur(6px);
+    .card-title {
+        font-size: 18px;
+    }
 
-    text-align: center;
-    text-decoration: none;  /* 🔥 링크 밑줄 제거 */
-    color: #fff;
+    .bottom-menu {
+        bottom: 22px;
+        gap: 10px;
+    }
 
-    display: block; /* 🔥 전체 클릭 가능 */
-}
-
-/* 바로가기 텍스트 */
-.card-link {
-    font-size: 14px;
-    opacity: 0.9;
+    .bottom-btn {
+        width: 88px;
+        padding: 11px 8px;
+        font-size: 13px;
     }
 }
-    a, a:link, a:visited, a:hover, a:active {
-    color: #fff !important;
-    text-decoration: none;
-}
-</style>
 
+</style>
 </head>
 
 <body>
@@ -151,23 +210,46 @@ body {
 
         <!-- 상단 문구 -->
         <div class="subtitle">여행의 시작 최고의 선택</div>
-        <div class="title">여행과 환전을 한 곳에서!</div>
-        <div class="desc">안전하고 편리한 여행 & 환전서비스</div>
 
-        <!-- 카드 -->
+        <div class="title">
+            여행과 환전을 한 곳에서!
+        </div>
+
+        <div class="desc">
+            안전하고 편리한 여행 & 환전서비스
+        </div>
+
+        <!-- 메인 카드 -->
         <div class="card-wrap">
 
-   <a href="travel.html" class="card">
-    <div class="card-title">포트래블</div>
-    <div class="card-link">바로가기</div>
-</a>
+            <a href="travel.html" class="card">
+                <div class="card-title">포트래블</div>
+                <div class="card-link">바로가기</div>
+            </a>
 
-<a href="exchange.html" class="card">
-    <div class="card-title">으뜸환전</div>
-    <div class="card-link">바로가기</div>
-</a>
+            <a href="exchange.html" class="card">
+                <div class="card-title">으뜸환전</div>
+                <div class="card-link">바로가기</div>
+            </a>
 
         </div>
+
+    </div>
+
+    <!-- 하단 버튼 -->
+    <div class="bottom-menu">
+
+        <a href="tel:02-2278-0033" class="bottom-btn">
+            전화상담
+        </a>
+
+        <a href="sms:010-5861-3777" class="bottom-btn">
+            문자상담
+        </a>
+
+        <a href="https://map.naver.com/v5/search/서울시%20중구%20을지로42길%2011" target="_blank" class="bottom-btn">
+            약도보기
+        </a>
 
     </div>
 
