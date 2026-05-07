@@ -117,11 +117,13 @@ body {
 
 /* 하단 버튼 */
 .bottom-menu {
-    position: absolute;
-    bottom: 70px;
+    position: fixed;   /* absolute → fixed 변경 */
+    
+    bottom: 70px;      /* 원하는 높이 */
     left: 50%;
     transform: translateX(-50%);
-    z-index: 3;
+
+    z-index: 999;
 
     display: flex;
     gap: 12px;
